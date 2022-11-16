@@ -1,2 +1,2 @@
 # springs-learn
-spring、springboot、springcloud
+spring、spring-boot、spring-cloud
