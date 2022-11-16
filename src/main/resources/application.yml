@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: ${spring.profiles.active}
+#  task:
+#    execution:
+#      thread-name-prefix: imooc-qinyi-task-
+#      pool:
+#        core-size: 2
+#        max-size: 8
+#  task:
+#    scheduling:
+#      pool:
+#        size: 5
+  jpa:
+    open-in-view: false
+  datasource:
+    url: jdbc:mysql://192.168.77.129:3306/imooc_escape?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 20
+      idle-timeout: 500000
+      max-lifetime: 540000
+      connection-timeout: 60000
+      connection-test-query: SELECT 1
+      pool-name: SpringEscapeHikariPool
+# 本机虚拟机单机Redis
+  redis:
+    host: 192.168.77.129
+    port: 6379
+    ## password: admin123
+    jedis:
+      pool:
+        max-active: 50
+        max-wait: 5000
+        max-idle: 10
+        min-idle: 3
+    timeout: 50000
+  nacos:
+    config:
+      server-addr: 192.168.77.129:8848
+      username: nacos
+      password: nacos
