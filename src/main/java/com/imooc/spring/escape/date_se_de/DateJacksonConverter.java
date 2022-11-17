@@ -12,11 +12,17 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.Date;
 
+/**
+ * 日期转换器
+ *
+ * @author zlp
+ * @date 2022/11/17
+ */
 @Slf4j
 public class DateJacksonConverter extends JsonDeserializer<Date> {
 
     private static final String[] pattern = new String[] {
-            "yyyy-MM-dd HH:mm:ss", "yyyy/MM/dd"
+            "yyyy-MM-dd HH:mm:ss", "yyyy/MM/dd", "yyyy-MM/dd"
     };
 
     @Override
@@ -40,6 +46,8 @@ public class DateJacksonConverter extends JsonDeserializer<Date> {
                     log.error("parse error: {}", ex.getMessage());
                     throw new IOException("parse error");
                 }
+            }finally {
+                log.info("Parse-date-result: {}", targetDate);
             }
         }
 

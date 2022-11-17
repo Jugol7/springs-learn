@@ -39,8 +39,3 @@ spring:
         max-idle: 10
         min-idle: 3
     timeout: 50000
-  nacos:
-    config:
-      server-addr: 192.168.77.129:8848
-      username: nacos
-      password: nacos

@@ -5,7 +5,6 @@ import com.imooc.spring.escape.application_context.UseIntitiallizer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -16,7 +15,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * */
 @EnableAsync
 //@EnableScheduling
-@EnableDiscoveryClient
 @SpringBootApplication
 @ServletComponentScan("com.imooc.spring.escape")
 @ComponentScan(value = {"com.imooc.spring.escape", "com.imooc.spring.outer"})
