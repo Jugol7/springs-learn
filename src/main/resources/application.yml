@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: ${spring.profiles.active}
+    active: dev
 #  task:
 #    execution:
 #      thread-name-prefix: imooc-qinyi-task-
@@ -39,3 +39,19 @@ spring:
         max-idle: 10
         min-idle: 3
     timeout: 50000
+  # Nacos 配置应用名称，服务地址
+  cloud:
+    nacos:
+      discovery:
+        enabled: true
+        server-addr: 192.168.77.129:8848
+      config:
+        enabled: true
+        server-addr: 192.168.77.129:8848
+        # 注意 指定命名空间在此位置不生效
+        # namespace: 20721de4-5db6-4f3f-90d9-f3bd055842a6
+        file-extension: yml
+        # prefix: zlp
+        # data-id: ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+        # 注意 指定分组在此位置不生效
+        # group: ZLP_GROUP
